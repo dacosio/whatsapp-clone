@@ -4,14 +4,15 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import MicIcon from '@material-ui/icons/Mic';
 import React, {useState} from 'react'
 import '../styles/Chat.css'
-
+import { useParams } from 'react-router-dom';
 const Chat = () => {
     const [seed, setSeed] = useState('');
     const [input, setInput] = useState('');
+    const { roomId } = useParams();
 
     const sendMessage = e => {
       e.preventDefault();
-      console.log("You typed an input", input)
+      setInput('');
     }
 
     return (
